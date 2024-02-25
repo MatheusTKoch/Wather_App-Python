@@ -3,7 +3,7 @@ import os
 import json
 from dotenv import load_dotenv
 
-def geocodingApi(state_code='', country_code='', limit=1):
+def geocodingApi(state_code='', country_code='', limit=1, lang='pt_br'):
     print("Name of the city you're searching:")
     city_name = input()
     print("Pass state code (optional, only for US):")
@@ -21,11 +21,13 @@ def geocodingApi(state_code='', country_code='', limit=1):
         latitude = responseCall[0]['lat']
         longitude = responseCall[0]['lon']
         #Return forecast
-        forecast_string=f"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={API_KEY}"
+        forecast_string=f"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={API_KEY}&units=metric&lang={lang}"
         forecastCall = requests.get(forecast_string)
         responseForecast = forecastCall.json()
+        descritpion = responseForecast['weather'][0]['description']
         print( "\n", "Nome:", cityName, "\n","Latitude:", latitude, 
-              "\n","Longitude:", longitude, "\n", "Current weather:", responseForecast)
+              "\n","Longitude:", longitude, "\n", "Temperatura atual:", responseForecast, 
+              "\n", "Descricao:", descritpion, "\n")
     else:
         print("Error: Unable to fetch data from the API")
     
