@@ -1,17 +1,17 @@
-#Weather App
+# Weather App
 
-##Descrição
+## Descrição
 
 O Weather App é uma aplicação Python que fornece informações sobre o clima atual com base no nome da cidade. Ele também pode aceitar códigos de estado e códigos de país opcionalmente, caso necessário. A aplicação utiliza a API do Open Weather para obter os dados meteorológicos.
 
-##Requisitos
+## Requisitos
 
 - Python 3.x
 - Módulo os
 - Módulo dotenv
 - Módulo requests
 
-##Instalação
+## Instalação
 
 1.Clone este repositório para o seu computador:
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 API_KEY='SuaChaveDeAPIAqui'
 
-##Uso
+## Uso
 
 Execute o aplicativo usando o Python:
 
